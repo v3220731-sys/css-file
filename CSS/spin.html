@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS Animations for Students */
+        .box {
+            height: 200px;                         /* Sets the height of the box to 200px */
+            width: 200px;                          /* Sets the width of the box to 200px */
+            background-color: red;                 /* Sets starting background color to red */
+            animation-name: ani1;                  /* Links the keyframe animation named "ani1" */
+            animation-delay: 1s;                   /* Waits 1 second before starting */
+            animation-duration: 6s;                /* Takes 6 seconds for one complete cycle */
+            position: absolute;                    /* Sets position to absolute for coordinate movement */
+            animation-iteration-count: infinite;  /* Makes the animation loop forever */
+            /* animation-direction: alternate; */  /* Plays forward, then backward in a loop */
+        }
+
+        /* Demo Keyframe structure using from-to (basic way): */
+        /* @keyframes demo {
+            from { transform: translateX(-100px); }
+            to { transform: translateX(2000px); }   
+        } */
+
+        /* Detailed keyframe structure using percentages (multi-step animation): */
+        @keyframes ani1 {
+            0% {
+                left: 0px;                          /* Start left position */
+                top: 0px;                           /* Start top position */
+            }
+            25% {
+                top: 0px;                           /* Keeps top boundary at 0px */
+                background-color: blue;             /* Changes color to blue */
+                left: 500px;                        /* Moves box 500px to the right */
+                transform: rotate(0deg);            /* Keeps rotation at 0 degrees */
+            }
+            50% {
+                top: 500px;                         /* Moves box 500px down */
+                border-radius: 50%;                 /* Converts the square into a circle */
+                left: 500px;                        /* Keeps box 500px from the left */
+                transform: rotate(360deg);          /* Spins the circle 360 degrees */
+            }
+            75% {
+                top: 500px;                         /* Keeps top boundary at 500px */
+                left: 0px;                          /* Moves box back to 0px from left */
+                background: repeating-radial-gradient(red, pink 30px); /* Sets radial pattern */
+            }
+            100% {
+                top: 0px;                           /* Moves top back to 0px */
+                left: 0px;                          /* Moves left back to 0px */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box"></div>
+
+</body>
+
+</html>

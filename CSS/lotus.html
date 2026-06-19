@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotus Flower</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            overflow: hidden;
+            background-color: transparent;
+        }
+
+        .flower {
+            position: relative;
+            width: 300px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            z-index: 4;
+        }
+       .petal {
+            position: absolute;
+            top: 100px;
+            width: 70px;
+            height:110px;
+            background-color:hotpink;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.15);
+            transform-origin: bottom center;
+        }
+
+        
+        .p1 {
+            transform: rotate(270deg);
+        }
+
+        .p2 {
+            transform: rotate(90deg);
+        }
+
+        .p3 {
+            transform: rotate(50deg);
+        }
+
+        .p4 {
+            transform: rotate(310deg);
+        }
+
+        .p5 {
+            transform: rotate(0deg);
+        }
+
+        .stem {
+            position: absolute;
+            top: 210px;
+            width: 10px;
+            height: 210px;
+            background-color: darkgreen;
+            border-radius: 5px;
+            z-index: 2;
+        }
+
+        .leaf {
+            position: absolute;
+            width: 50px;
+            height: 80px;
+            background-color:darkgreen;
+            z-index: 2;
+        }
+
+        .leaf.left {
+            top: 260px;
+            left: 85px;
+            border-radius: 0 100px 0 100px;
+            transform: rotate(-15deg);
+        }
+
+        .leaf.right {
+            top: 300px;
+            right: 85px;
+            border-radius: 100px 0 100px 0;
+            transform: rotate(15deg);
+        }
+
+        .base {
+            position: absolute;
+            bottom: 70px;
+            width: 120px;
+            height: 20px;
+            background-color: darkgreen;
+            border-radius: 5px 5px 25px 25px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="flower">
+        <div class="petal p1"></div>
+        <div class="petal p2"></div>
+        <div class="petal p3"></div>
+        <div class="petal p4"></div>
+        <div class="petal p5"></div>
+        
+             <div class="stem"></div>
+   
+
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
+
+        <div class="base"></div>
+    </div>
+
+</body>
+
+</html>

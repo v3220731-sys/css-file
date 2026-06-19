@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Traffic Animation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+  
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow: hidden;
+      background-color: #e0f7fa;
+      font-family: sans-serif;
+    }
+    .scenery {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to bottom, #b3e5fc 70%, #81c784 70%);
+    }
+    .road {
+      position: absolute;
+      bottom: 10%;
+      width: 100%;
+      height: 150px;
+      background-color: #555555;
+      border-top: 5px solid #777;
+      border-bottom: 5px solid #777;
+      display: flex;
+      align-items: center;
+     
+    }
+    .road-lines {
+      width: 100%;
+      height: 6px;
+      background: repeating-linear-gradient(
+        90deg,
+        #ffffff,
+        #ffffff 30px,
+        transparent 30px,
+        transparent 60px
+      );
+    }
+    .traffic-lane {
+      position: absolute;
+      bottom: 12%;
+      width: 100%;
+      height: 120px;
+    }
+    .vehicle {
+      position: absolute;
+      font-size: 6rem; /* Scale up vehicle sizes */
+      bottom: 0;
+      will-change: transform;
+    }
+    .school-bus {
+      font-size: 10rem;
+      animation: moveTraffic 12s linear infinite;
+      animation-delay: 0s;
+      
+    }
+
+    .truck {
+      font-size: 9rem;
+      z-index: 10;
+      animation: moveTraffic 9s linear infinite;
+      animation-delay: 0s;
+    }
+    .truck-vehicle {
+      font-size: 10rem;
+      z-index: 11;
+      animation: moveTraffic 16s linear infinite;
+      animation-delay: 1s;
+    }
+
+    .green-driver {
+      font-size: 9rem;
+      z-index: 5;
+      animation: moveTraffic 18s linear infinite;
+      animation-delay: 2s;
+    }
+
+    .car-red {
+      font-size: 7rem;
+      animation: moveTraffic 11s linear infinite;
+      animation-delay: 0ms;
+    }
+    .police-vehicle {
+      font-size: 8rem;
+      animation: moveTraffic 9s linear infinite;
+      animation-delay: 1s;
+      z-index: 6;
+    }
+    .lane-top .car {
+            left: -100px;
+            animation: moveRight linear infinite;
+        }
+
+        @keyframes moveRight {
+            0% { left: -100px; }
+            100% { left: 100%; }
+        }
+    @keyframes moveTraffic {
+      0% {
+        transform: translateX(110vw);
+        
+      }
+      100% {
+        transform: translateX(-20vw);
+      }
+    }
+  </style>
+  <body>
+    <div class="scenery">
+      <div class="sky">
+        <div class="cloud"></div>
+      </div>
+
+      <div class="road">
+        <div class="road-lines"></div>
+      </div>
+
+      <div class="traffic-lane">
+        <div class="vehicle car-red">🛻</div>
+
+        <div class="vehicle green-driver"></div>
+
+        
+        <div class="vehicle school-bus">🚌</div>
+        <div class="vehicle police-vehicle"></div>
+        <div class="vehicle truck">🛻</div>
+
+        <div class="vehicle truck-vehicle"></div>
+      </div>
+      
+    </div>
+  </body>
+</html>

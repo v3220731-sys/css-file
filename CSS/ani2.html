@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #2c3e50;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+        }
+
+
+        /* Road Setup */
+        .road {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background: #333;
+            border-top: 10px solid #555;
+            border-bottom: 10px solid #555;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+    
+    .vehicle {
+      position: absolute;
+      font-size: 6rem; /* Scale up vehicle sizes */
+      bottom: 0;
+      will-change: transform;
+    }
+    .school-bus {
+      font-size: 10rem;
+      animation: moveTraffic 12s linear infinite;
+      animation-delay: 0s;
+      
+    }
+
+    .truck {
+      font-size: 9rem;
+      z-index: 10;
+      animation: moveTraffic 9s linear infinite;
+      animation-delay: 0s;
+    }
+    .truck-vehicle {
+      font-size: 10rem;
+      z-index: 11;
+      animation: moveTraffic 16s linear infinite;
+      animation-delay: 1s;
+    }
+
+    .green-driver {
+      font-size: 9rem;
+      z-index: 5;
+      animation: moveTraffic 18s linear infinite;
+      animation-delay: 2s;
+    }
+
+    .car-red {
+      font-size: 7rem;
+      animation: moveTraffic 11s linear infinite;
+      animation-delay: 0ms;
+    }
+    .police-vehicle {
+      font-size: 8rem;
+      animation: moveTraffic 9s linear infinite;
+      animation-delay: 1s;
+      z-index: 6;
+    }
+    .lane-top .car {
+            left: -100px;
+            animation: moveRight linear infinite;
+        }
+
+        @keyframes moveRight {
+            0% { left: -100px; }
+            100% { left: 100%; }
+        }
+    @keyframes moveTraffic {
+      0% {
+        transform: translateX(-110vw);
+        
+      }
+      100% {
+        transform: translateX(-20vw);
+      }
+    }
+
+      
+
+        </style>
+<body>
+    <div class="road">
+        <div class="scenery">
+      <div class="sky">
+        <div class="cloud"></div>
+      </div>
+
+      <div class="road">
+      </div>
+
+      <div class="traffic-lane">
+        <div class="vehicle car-red">🛻</div>
+
+        <div class="vehicle green-driver"></div>
+
+        
+        <div class="vehicle school-bus">🚌</div>
+        <div class="vehicle police-vehicle"></div>
+        <div class="vehicle truck">🛻</div>
+        <div class="urlTag" style="margin:-15px;"><img src="https://imgs.search.brave.com/c5qTZ41-laW4dhGOvs10Q0xvvJmagdatGjHXwEUWJak/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMzMv/Njg1LzcwMy9zbWFs/bC9zaWRlLXZpZXct/Ymx1ZS1zZWRhbi1j/YXItcG5nLnBuZw" alt=""></div>
+
+        <div class="vehicle truck-vehicle"></div>
+      </div>
+
+        
+    </div>
+    
+</body>
+</html>
